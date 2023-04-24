@@ -102,7 +102,8 @@ app.post('/api/persons', (request, response) => {
 
 
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
+//Now we are using the port defined in the environment variable PORT or port 3001 if the environment variable PORT is undefined. Fly.io and Render configure the application port based on that environment variable.
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
